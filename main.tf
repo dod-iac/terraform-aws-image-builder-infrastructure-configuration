@@ -61,6 +61,7 @@ resource "aws_imagebuilder_infrastructure_configuration" "main" {
   key_pair                      = length(var.key_name) > 0 ? var.key_name : null
   name                          = var.name
   security_group_ids            = [aws_security_group.main.id]
+  sns_topic_arn                 = length(var.sns_topic_arn) > 0 ? var.sns_topic_arn : null
   subnet_id                     = var.subnet_id
   tags                          = var.tags
   terminate_instance_on_failure = var.terminate_instance_on_failure
