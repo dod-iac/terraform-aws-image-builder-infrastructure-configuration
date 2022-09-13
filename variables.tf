@@ -37,6 +37,12 @@ variable "name" {
   description = "The name of the infrastructure configuration."
 }
 
+variable "sns_topic_arn" {
+  type        = string
+  description = "The ARN of the SNS topic receiving notifications during builds."
+  default     = ""
+}
+
 variable "subnet_id" {
   type        = string
   description = "The ID of the VPC subnet used when building images."

@@ -44,13 +44,13 @@ This project constitutes a work of the United States Government and is not subje
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0, < 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0, < 5.0 |
 
 ## Modules
 
@@ -74,6 +74,7 @@ No modules.
 | <a name="input_logging_bucket"></a> [logging\_bucket](#input\_logging\_bucket) | The name of the bucket that will receive the log objects. | `string` | `""` | no |
 | <a name="input_logging_prefix"></a> [logging\_prefix](#input\_logging\_prefix) | The key prefix to use when logging.  Defaults to "imagebuilder/[NAME]/" if not specified. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the infrastructure configuration. | `string` | n/a | yes |
+| <a name="input_sns_topic_arn"></a> [sns\_topic\_arn](#input\_sns\_topic\_arn) | The ARN of the SNS topic receiving notifications during builds. | `string` | `""` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | The ID of the VPC subnet used when building images. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | The tags to apply to the infrastructure configuration. | `map(string)` | `{}` | no |
 | <a name="input_terminate_instance_on_failure"></a> [terminate\_instance\_on\_failure](#input\_terminate\_instance\_on\_failure) | Enable if the instance should be terminated when the pipeline fails. | `bool` | `true` | no |
